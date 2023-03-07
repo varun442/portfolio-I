@@ -8,6 +8,11 @@ const Navbar = () => {
   useEffect(() => {
     setExpandNavbar(false);
   }, [location]);
+
+  const handleDownload = () => {
+    window.location.href =
+      "https://drive.google.com/file/d/1FQ98IjhEQWHCHlE3Hls2aXXW_OxP2FeS/view"; // replace with the URL of your file
+  };
   return (
     <div className="navbar" id={expandNavbar ? "open" : "close"}>
       <div className="toggleButton">
@@ -25,7 +30,9 @@ const Navbar = () => {
         <Link to="/projects">Projects</Link>
         <Link to="/experience">Experience</Link>
         <Link to="/blogs">Blogs</Link>
-        <button className="resume">Download CV</button>
+        <button onClick={handleDownload} className="resume">
+          Download CV
+        </button>
       </div>
     </div>
   );
